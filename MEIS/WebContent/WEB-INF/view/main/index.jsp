@@ -19,10 +19,10 @@ function doLogin()
 			alert('could found service');
 		},
 		success:function(data){
-			alert(data.ajaxResult.success);
-			if(data.ajaxResult.success == true)
+			if(data.Results.err == "Succ")				
 			{				
-				$(location).attr("href",'${rdir}');
+				alert(data.rdir);
+				$(location).attr("href",data.rdir);
 			}else
 			{				
 				alert(data.res.err);

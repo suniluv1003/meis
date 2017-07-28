@@ -31,17 +31,18 @@ public class LoginCtr extends com.ose.meis.bc.comm.ComCtr {
 		User usr = us.getUserInfo(userId, password);
 		_Block001: {
 			if (usr == null) {
-				res.setSurc(false);
+				res.setSurc("false");
 				res.setErr(Message.e011);
 				break _Block001;
 			}
 			res.setRes(usr);
-			res.setSurc(true);;
+			res.setSurc("true");;
+			res.setErr("Succ");
 			mav.addObject("usr",usr);
+			mav.addObject("Results",res);
 			mav.addObject("rdir",rdir);
 			session.setAttribute("mfUSR",usr);
 		}
-		mav.addObject(res);
 		return mav;
 	}
 	
