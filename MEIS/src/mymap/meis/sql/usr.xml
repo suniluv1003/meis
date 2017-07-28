@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">    
+<mapper namespace="user">
+<resultMap id="User" type="com.ose.meis.bc.usr.User" >
+	<id	property="id" 			column="id"				javaType="java.lang.String"/>
+	<result	property="pw" 			column="pw" 				javaType="java.lang.String"/>	
+</resultMap>
+<select id="getUsrInfo" 
+		parameterType="com.ose.meis.bc.usr.User" resultMap="User">
+		select id, pw
+		from usr		
+</select>		
+</mapper>
